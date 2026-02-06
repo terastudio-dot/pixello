@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4f8cff">
+  <title>Pixello</title>
+
+  <!-- Pixel font (Google Fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="splashScreen">
+    <img src="icons/pixello.png" alt="Pixello Logo" class="splash-logo" />
+  </div>
+
+  <div id="app" style="display:none;">
+
+    <!-- APP HEADER -->
+    <div class="app-header">
+      <img src="icons/pixello-transp.png" alt="Pixello Logo" class="app-logo">
+      <h1>PIXELLO</h1>
+    </div>
+
+    <div class="layout">
+      <!-- LEFT : CONTROLS -->
+      <div class="controls">
+        <input type="file" id="upload" accept="image/*">
+        <hr>
+
+        <!-- MODE -->
+        <label><input type="radio" name="mode" value="pixelate" checked> Pixelate</label>
+        <label><input type="radio" name="mode" value="resize"> Resize</label>
+
+        <div id="pixelControls">
+          <h3>Pixel Size</h3>
+          <input type="range" id="pixelSizeRange" min="2" max="50" value="10">
+          <input type="number" id="pixelSizeNumber" min="2" max="50" value="10">
+        </div>
+
+        <div id="resizeControls" style="display:none;">
+          <h3>Resize</h3>
+          <input type="number" id="resizeWidth" placeholder="Width (px)">
+          <input type="number" id="resizeHeight" placeholder="Height (px)">
+          <br>
+          <label>
+            <input type="checkbox" id="lockRatio" checked>
+            Lock ratio
+          </label>
+          <br><br>
+          <button id="applyResize">Apply Resize</button>
+        </div>
+
+        <hr>
+
+        <h3>Adjust</h3>
+        <label>Brightness: <span id="bVal">100%</span></label>
+        <input type="range" id="brightness" min="50" max="150" value="100">
+
+        <label>Contrast: <span id="cVal">100%</span></label>
+        <input type="range" id="contrast" min="50" max="150" value="100">
+
+        <label>Saturation: <span id="sVal">100%</span></label>
+        <input type="range" id="saturation" min="0" max="200" value="100">
+
+        <button id="download">Download</button>
+      </div>
+
+      <!-- RIGHT : CANVAS -->
+      <div class="preview">
+        <canvas id="canvas"></canvas>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="app-footer">
+      <div class="footer-left">
+        <img src="icons/terastudio26_pixe.png" alt="Terastudio Logo" class="footer-logo">
+        <span>© 2026 terastudio</span>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.youtube.com/@terastudioo/" title="YouTube">
+          <img src="icons/youtube.png" alt="YouTube">
+        </a>
+        <a href="https://www.instagram.com/terasybau/" title="Instagram">
+          <img src="icons/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.tiktok.com/@terastudio_" title="TikTok">
+          <img src="icons/tiktok.png" alt="TikTok">
+        </a>
+        <a href="https://github.com/terastudio-dot" title="GitHub">
+          <img src="icons/github.png" alt="GitHub">
+        </a>
+        <a href="https://huggingface.co/terastudio" title="Hugging Face">
+          <img src="icons/huggingface.png" alt="HuggingFace">
+        </a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="js/script.js"></script>
+  <script src="js/splashscreen.js"></script>
+</body>
+</html>

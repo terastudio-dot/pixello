@@ -1,0 +1,329 @@
+/* =========================
+   GLOBAL
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Pixelify Sans", sans-serif;
+  background: #0e0e0e;
+  color: #222;
+}
+
+/* =========================
+   APP HEADER (LOGO + TITLE)
+========================= */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.app-logo {
+  width: 48px;
+  height: 48px;
+  image-rendering: pixelated;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   APP CONTAINER
+========================= */
+#app {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   TITLE
+========================= */
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #2b2b2b;
+}
+
+/* =========================
+   2 COLUMN LAYOUT
+========================= */
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+}
+
+/* =========================
+   LEFT PANEL
+========================= */
+.controls {
+  background: #f7f9fc;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #e0e6ef;
+  text-align: left;
+}
+
+.controls h3 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.controls label {
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.controls input[type="file"],
+.controls input[type="number"],
+.controls input[type="range"] {
+  width: 100%;
+  margin-bottom: 10px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+}
+
+.controls hr {
+  border: none;
+  border-top: 2px dashed #cfd6e4;
+  margin: 16px 0;
+}
+
+/* =========================
+   RIGHT PANEL
+========================= */
+.preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+  border-radius: 12px;
+  border: 2px dashed #c0c0c0;
+  min-height: 400px;
+}
+
+canvas {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+  background: #ffffff;
+  image-rendering: pixelated;
+}
+
+/* =========================
+   BUTTON
+========================= */
+button {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px 10px;
+  border: 2px solid #000;
+  border-radius: 6px;
+  background: #4f8cff;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 0 #2c5fd3;
+}
+
+button:hover {
+  background: #3b6fe6;
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #2c5fd3;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* =========================
+   SPLASH SCREEN
+========================= */
+#splashScreen {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #b8c6db, #6f85b5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.splash-logo {
+  width: 128px;
+  height: 128px;
+  margin-bottom: 16px;
+  image-rendering: pixelated;
+  animation: popIn 0.6s steps(5, end);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes popIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   FOOTER
+========================= */
+.app-footer {
+  margin-top: 32px;
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 2px dashed #d6dbe6;
+  flex-wrap: wrap;
+}
+
+/* LEFT */
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  image-rendering: pixelated;
+  background: #fff;
+  border: 2px solid #000;
+}
+
+.footer-left span {
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #555;
+}
+
+/* SOCIAL ICONS */
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-socials img {
+  width: 28px;
+  height: 28px;
+  image-rendering: pixelated;
+  border-radius: 6px;
+  border: 2px solid #000;
+  background: #fff;
+  padding: 2px;
+  transition: transform 0.15s ease;
+}
+
+.footer-socials img:hover {
+  transform: scale(1.15);
+}
+
+/* =========================
+   MOBILE ONE COLUMN MODE
+========================= */
+@media (max-width: 600px) {
+
+  /* APP */
+  #app {
+    margin: 12px;
+    padding: 16px;
+  }
+
+  /* HEADER */
+  .app-header {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .app-header h1 {
+    font-size: 18px;
+  }
+
+  /* LAYOUT → 1 COLUMN */
+  .layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* PREVIEW FIRST (UX) */
+  .preview {
+    order: 1;
+    min-height: 260px;
+    padding: 10px;
+  }
+
+  canvas {
+    max-height: 55vh;
+  }
+
+  /* CONTROLS SECOND */
+  .controls {
+    order: 2;
+    padding: 18px;
+  }
+
+  .controls h3 {
+    font-size: 13px;
+  }
+
+  .controls label {
+    font-size: 11px;
+  }
+
+  .controls input,
+  .controls button {
+    font-size: 12px;
+  }
+
+  button {
+    padding: 16px;
+    font-size: 12px;
+  }
+
+  /* FOOTER */
+  .app-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .footer-socials img {
+    width: 34px;
+    height: 34px;
+  }
+}
